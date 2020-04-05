@@ -41,11 +41,15 @@
         }
         
         private loadPosts(page: number) {
-            const path = this.$router.currentRoute.path === "/" ?
+            let path = this.$router.currentRoute.path === "/" ?
                 "index" : 
-                this.$router.currentRoute.path === '/blog' ? 
+                this.$router.currentRoute.path.startsWith('/blog') ? 
                     undefined : 
                     this.$router.currentRoute.path.substring(1);
+
+            if (typeof path === "string" && path.endsWith('/')) {
+                path = path.substring(0, path.length);
+            }
             postDispatch.getPosts(path, page);
         }
     }

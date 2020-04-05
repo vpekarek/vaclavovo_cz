@@ -2,7 +2,7 @@
     <div class="post">
         <h1 v-html="post.title"></h1>
         <div class="post-content" v-html="post.content"></div>
-        <router-link :to="{ path: '/' }">Zpět</router-link>
+        <router-link :to="{ path: '/blog' }">Zpět</router-link>
     </div>
 </template>
 

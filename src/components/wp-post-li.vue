@@ -2,7 +2,7 @@
     <div class="post-item">
         <div class="post-item--content">
             <h2 class="post-item--content__link">
-                <router-link :to="{ path: '/' + post.slug }" v-html="post.title"></router-link>
+                <router-link :to="{ path: '/blog/' + post.slug }" v-html="post.title"></router-link>
             </h2>
             <div class="post-item--content__excerpt" v-html="post.excerpt"></div>
         </div>
