@@ -1,9 +1,13 @@
 <template>
-    <div class="view container columns right" v-if="post !== undefined">
-        <wp-post :post="post" />
-        <aside>
-            <wp-post-content :post="post" />
-        </aside>
+    <div class="page--content">
+        <div class="view posts">
+            <div class="container columns right" v-if="post !== undefined">
+                <wp-post :post="post" />
+                <aside>
+                    <wp-post-content :post="post" />
+                </aside>
+            </div>
+        </div>
     </div>
 </template>
 

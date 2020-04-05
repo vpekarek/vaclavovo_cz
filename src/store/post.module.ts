@@ -60,7 +60,7 @@ const actions = {
         }
         commit(POSTS_IS_LOADING, { currentPage: payload.page });
 
-        let query = wp.posts().perPage(2).page(payload.page).param('categories_exclude', [4, 5]);
+        let query = wp.posts().perPage(10).page(payload.page).param('categories_exclude', [4, 5]);
         let call: Promise<any>;
         
         if (payload.categorySlug) {

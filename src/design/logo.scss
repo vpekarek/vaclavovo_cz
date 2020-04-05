@@ -1,6 +1,8 @@
 .logo {
     &--img {
         max-width: 50px;
+        -webkit-filter: brightness(0);
+        filter: brightness(0);
     }
 
     a {
