@@ -74,20 +74,18 @@ li {
 p {
 }
 
-a {
+a, a:visited {
     color: $primary-color;
     text-decoration: none;
 
-    &:hover,    
-    &:visited {
-        color: $primary-color;
+    &:hover
+    {
+        color: $secondary-color;
+        text-decoration: none;
     }
 
     &:focus {
         color: $secondary-color;
     }
 
-    &:hover {
-        text-decoration: underline;
-    }
 }
