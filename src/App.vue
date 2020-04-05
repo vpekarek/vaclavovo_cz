@@ -15,7 +15,7 @@
     import SimpleLayout from '@/components/layouts/simple-layout.vue';
     import ErrorLayout from '@/components/layouts/error-layout.vue';
     import store, { postDispatch, pageDispatch, widgetDispatch } from '@/store';
-    import { pageEvents } from '@/shared'
+    import { pageEvents, cache } from '@/shared'
 
     const app_layout = 'full-layout';
 
@@ -51,13 +51,14 @@
             }
         },
         async created() {
+            cache.clear();
             pageDispatch.getPages();
             window.addEventListener('scroll', pageEvents.scrollHandler);
             window.addEventListener('click', pageEvents.anchorHashClick);
         },
         destroyed () {
             window.removeEventListener('scroll', pageEvents.scrollHandler);
-            window.removeEventListener('click', pageEvents.anchorHashClick);
+            window.removeEventListener('click', pageEvents.anchorHashClick);            
         },        
     })
     export default class App extends Vue {}

@@ -1,14 +1,16 @@
 import { CACHE_ENABLED } from '.';
 
+console.log(CACHE_ENABLED);
+
 export const cache = {
     set<T = string>(key: string, data: T) {
-        if (typeof data === "string") {
-            localStorage.setItem(key, data);
-        } else {
-            localStorage.setItem(key, JSON.stringify(data));
+        const dataCache: CacheItem<T> = {
+            date: new Date(),
+            data: data
         }
+        localStorage.setItem(key, JSON.stringify(dataCache));
     },
-    get<T = string>(key: string): string | T | null {
+    get<T = string>(key: string): T | null {
 
         if (!CACHE_ENABLED) {
             return null;
@@ -20,12 +22,10 @@ export const cache = {
             return null;
         }
 
-        try {
-            const parsed = JSON.parse(fromCache);
-            return parsed as T;
-        } catch {
-            return fromCache as string;
-        }
+        const parsed = JSON.parse(fromCache) as CacheItem<T>;
+
+        return parsed.data;
+
     },
     remove(key: string) {
         localStorage.removeItem(key);
@@ -33,4 +33,9 @@ export const cache = {
     clear() {
         localStorage.clear();
     }
+}
+
+interface CacheItem<T> {
+    date: Date,
+    data: T
 }

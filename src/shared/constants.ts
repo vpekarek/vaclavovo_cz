@@ -7,4 +7,4 @@ export const categoryList = [
     { slug: "c-sharp", id: 3 },
     { slug: "index-widgets", id: 4 },
     { slug: "about-widgets", id: 5 }
-  ]
+  ];
