@@ -4,5 +4,6 @@ export interface PostModel {
     excerpt: string,
     content: string,
     slug: string,
-    featuredImageUrl?: string
+    featuredImageUrl?: string,
+    categories: number[]
 }

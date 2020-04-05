@@ -1,7 +1,7 @@
 <template>
     <div class="logo">
         <router-link to="/">
-            <img class="logo--img" :class="scrollClass" src="@/assets/logo.png" />
+            <img class="logo--img" :class="scrollClass" src="@/assets/logo.png" alt="Václav Pekárek personal logo" />
         </router-link>
     </div>
 </template>

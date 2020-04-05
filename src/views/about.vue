@@ -19,7 +19,7 @@
         </div>
         <div class="page--part social-sites">
             <div class="container">
-                <wp-page slug="social-sites" />
+                <wp-page slug="social-sites" title="true" />
             </div>
         </div>
     </div>

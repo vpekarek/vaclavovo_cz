@@ -51,7 +51,7 @@ const actions = {
         let call: Promise<any>;
         
         if (payload.categorySlug) {
-            call = getWidgetByCategorySlug(payload.categorySlug, query)
+            call = helpers.getWidgetByCategorySlug(payload.categorySlug, query)
         } else if (payload.slug) {
             call = query.slug(payload.slug).get();
         } else {
@@ -61,7 +61,7 @@ const actions = {
         call.then(wpWidgets => {
             if (wpWidgets) {
                 const widgets = wpWidgets.map((x: any) => {
-                    return getWidgetFromWpWidget(commit, x);
+                    return helpers.getWidgetFromWpWidget(commit, x);
                 });
                 
                 const payload = { widgets };
@@ -116,34 +116,34 @@ const widgetGetters = {
     }
 };
 
+const helpers = {
+    getWidgetFromWpWidget(commit: any, wpWidget: any): WidgetModel {
+        const widget: WidgetModel = {
+            id: wpWidget.id,
+            title: decodeURI(wpWidget.title.rendered),
+            content: wpWidget.content.rendered,
+            slug: wpWidget.slug
+        };
 
-function getWidgetFromWpWidget(commit: any, wpWidget: any): WidgetModel {
-    const widget: WidgetModel = {
-        id: wpWidget.id,
-        title: decodeURI(wpWidget.title.rendered),
-        content: wpWidget.content.rendered,
-        slug: wpWidget.slug
-    };
+        return widget;
+    },
 
-    return widget;
-};
+    getWidgetByCategorySlug(slug: string, query: WPRequest): Promise<any> {
+        const index = categoryList.findIndex(x => x.slug === slug);
 
-function getWidgetByCategorySlug(slug: string, query: WPRequest): Promise<any> {
+        if (index > -1) {
+            const id = categoryList[index].id;
+            return query.categories(id);
+        }
 
-    const index = categoryList.findIndex(x => x.slug === slug);
-
-    if (index > -1) {
-        const id = categoryList[index].id;
-        return query.categories(id);
+        return wp.categories().slug(slug).then((cats) => {
+            var cat = cats[0];
+            return query.categories( cat.id );
+        }).then((widgets) => {
+            return widgets;
+        });
     }
-
-    return wp.categories().slug(slug).then((cats) => {
-        var cat = cats[0];
-        return query.categories( cat.id );
-    }).then((widgets) => {
-        return widgets;
-    });
-};
+}
 
 export default {
     namespaced: true as true,

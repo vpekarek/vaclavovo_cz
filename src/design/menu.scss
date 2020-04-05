@@ -1,28 +1,30 @@
 @import 'variables';
 
 .main-menu {
-    margin-left: 30px;
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
-        display: inline-flex;        
+        display: inline-flex;
 
         li {
-            list-style: none;            
+            list-style: none;
+            padding-right: 0px;
         }
 
         a,
         a:visited {
-            padding: 15px 15px 16px;
+            padding: 12px 15px 12px;
             display: inline-block;
             text-decoration: none;
-            color: $primary-color-darker;
+            color: $primary-color-darker;            
+            font-size: 1.25em;
+            border-top: 2px solid $primary-color-lightest;
 
             &.router-link-exact-active,
             &:hover,
             &:focus {
-                color: $secondary-color;
+                border-top: 2px solid;
             }
         }
     }

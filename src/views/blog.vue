@@ -4,6 +4,7 @@
             <div class="container columns right">
                 <section>
                     <div class="page" v-if="page !== undefined" v-html="page.content"></div>
+                    <wp-posts />
                 </section>
                 <aside class="right">
                     <wp-widgets slug="index-widgets" />
@@ -30,8 +31,8 @@
             WpWidgets
         },
     })
-    export default class Index extends Vue {
-        get page() { return pageGetters.getPageBySlug('index'); }
+    export default class Blog extends Vue {
+        get page() { return pageGetters.getPageBySlug('blog'); }
 
     }
 </script>

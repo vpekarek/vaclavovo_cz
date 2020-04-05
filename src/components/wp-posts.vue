@@ -3,7 +3,7 @@
         <article v-for="post in posts" :key="post.id" class="post-item">
             <wp-post-li :postId="post.id" />
         </article>
-        <wp-pager @change-page="changePage" />        
+        <wp-pager @change-page="changePage" />
     </div>
     <loader v-else />
 </template>
@@ -41,7 +41,11 @@
         }
         
         private loadPosts(page: number) {
-            const path = this.$router.currentRoute.path === '/' ? undefined : this.$router.currentRoute.path.substring(1);
+            const path = this.$router.currentRoute.path === "/" ?
+                "index" : 
+                this.$router.currentRoute.path === '/blog' ? 
+                    undefined : 
+                    this.$router.currentRoute.path.substring(1);
             postDispatch.getPosts(path, page);
         }
     }

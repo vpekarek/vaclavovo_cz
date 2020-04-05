@@ -1,8 +1,8 @@
 <template>
     <header class="page--header">
         <div class="container">
-            <wp-logo />
             <wp-menu />
+            <wp-logo />
         </div>
     </header>
 </template>

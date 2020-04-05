@@ -1,9 +1,12 @@
 .logo {
+    padding-top: 5px;
+    
     &--img {
         max-width: 50px;        
     }
 
     a {
         display: inline-block;
+        line-height: 16px;
     }
 }

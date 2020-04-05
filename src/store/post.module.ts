@@ -110,7 +110,7 @@ const getters = {
 }
 
 const postDispatch = {
-    getPosts(categorySlug?: string, page?: number, slug?: string) {        
+    getPosts(categorySlug?: string, page?: number, slug?: string) {
         (<any>store.dispatch).post.getPosts({ categorySlug, page, slug });
     },
     replacePostContent(postId: number, content: string) {
@@ -137,12 +137,11 @@ const helpers = {
             title: decodeURI(wpPost.title.rendered),
             excerpt: wpPost.excerpt.rendered,
             content: wpPost.content.rendered,
-            slug: wpPost.slug
+            slug: wpPost.slug,
+            categories: wpPost.categories
         };
-
-        if (wpPost.jetpack_featured_media_url) {
-            post.featuredImageUrl = wpPost.jetpack_featured_media_url;
-        } else if (wpPost.featured_media > 0) {
+        
+        if (wpPost.featured_media > 0) {
             wp.media().id(wpPost.featured_media).get().then((image: any) => {
                 post.featuredImageUrl = image.link;
                 commit(POST_IS_LOADED, post);

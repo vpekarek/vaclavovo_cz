@@ -24,6 +24,15 @@ const router = new Router({
             },
         },
         {
+            path: '/blog',
+            component: () =>
+                // eslint-disable-next-line
+                import(/* webpackChunkName: "bundle.about" */ '@/views/blog.vue'),
+            meta: {
+                layout: 'full-layout',
+            },
+        },
+        {
             path: '/about',
             component: () =>
                 // eslint-disable-next-line
@@ -34,7 +43,7 @@ const router = new Router({
         },
         {
             name: 'post',
-            path: '/:slug',
+            path: '/blog/:slug',
             props: parseSlug,
             component: () =>
                 // eslint-disable-next-line
