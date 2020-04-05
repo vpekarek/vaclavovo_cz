@@ -1,0 +1,27 @@
+
+
+.isDesktop {
+    display: none;
+}
+
+@media all and (min-width: 481px) { 
+
+}
+
+@media all and (min-width: 840px) { 
+
+} 
+
+@media all and (min-width: 1025px) { 
+    .isMobile {
+        display:none;
+    }
+
+    .isDesktop {
+        display: initial;
+    }
+} 
+
+@media all and (min-width: 1500px) { 
+
+} 

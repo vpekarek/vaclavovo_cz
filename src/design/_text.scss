@@ -1,0 +1,78 @@
+@import 'variables';
+
+body {
+    font-size: 16px;
+    font-family: $font-text;
+    color: rgb(83, 82, 82);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-text;
+    color: $primary-color-darker;    
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+h1, h2, h3 {
+    font-weight: lighter;
+}
+/* sizes calculated from: https://type-scale.com/ */
+h1 { 
+    font-size: 4.209em; 
+}
+
+h2 { 
+    font-size: 3.157em;
+}
+
+h3 { 
+    font-size: 2.369em; 
+}
+
+h4 { 
+    font-size: 1.777em; 
+}
+
+h5 { 
+    font-size: 1.333em; 
+}
+
+small { 
+    font-size: 0.75em; 
+}
+
+p, ul, li, a {
+    box-sizing: border-box;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 15px;
+    line-height: 1.5em;
+}
+
+
+
+li {
+    margin: 0;
+    padding: 0;
+    list-style: square;
+}
+
+p {
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:visited {
+        color: $primary-color;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

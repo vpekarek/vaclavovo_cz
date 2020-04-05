@@ -1,0 +1,21 @@
+@import "variables";
+
+.post-item {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &--content {
+        h2 {
+            a {
+                font-family: $font-text;
+                font-size: 1.3em;
+                font-weight: 300;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import 'variables';
+
+.main-menu {
+    margin-left: 30px;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;        
+
+        li {
+            list-style: none;            
+        }
+
+        a {
+            padding: 15px 15px 16px;
+            display: inline-block;
+            text-decoration: none;
+            color: $primary-color-darker;
+
+            &.router-link-exact-active,
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}

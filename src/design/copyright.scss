@@ -1,0 +1,15 @@
+@import 'variables';
+
+.copyright {
+    padding: 5px 0;
+}
+p {
+    font-size: 0.8em;
+    margin: 0;
+    padding: 3px;
+    color: $primary-color-inverse;
+}
+
+a, a:hover, a:focus, a:visited {
+    color: $primary-color-lightest;
+}
