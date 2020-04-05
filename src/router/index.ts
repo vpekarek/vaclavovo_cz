@@ -27,7 +27,7 @@ const router = new Router({
             path: '/about',
             component: () =>
                 // eslint-disable-next-line
-                import(/* webpackChunkName: "bundle.main" */ '@/views/about.vue'),
+                import(/* webpackChunkName: "bundle.about" */ '@/views/about.vue'),
             meta: {
                 layout: 'full-layout',
             },
@@ -38,7 +38,7 @@ const router = new Router({
             props: parseSlug,
             component: () =>
                 // eslint-disable-next-line
-                import(/* webpackChunkName: "bundle.main" */ '@/views/post-view.vue'),
+                import(/* webpackChunkName: "bundle.post" */ '@/views/post-view.vue'),
             meta: {
                 layout: 'simple-layout',
                 isPost: true

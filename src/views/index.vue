@@ -1,6 +1,6 @@
 <template>
     <div class="page--content">
-        <div class="view main">
+        <div class="page--part main">
             <div class="container columns right">
                 <section>
                     <div class="page" v-if="page !== undefined" v-html="page.content"></div>
@@ -36,3 +36,7 @@
 
     }
 </script>
+
+<style lang="scss" scoped>
+@import '@/design/page-part.scss';
+</style>

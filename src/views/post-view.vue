@@ -1,6 +1,6 @@
 <template>
     <div class="page--content">
-        <div class="view posts">
+        <div class="page--part posts">
             <div class="container columns right" v-if="post !== undefined">
                 <wp-post :post="post" />
                 <aside>
@@ -38,3 +38,7 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+@import '@/design/page-part.scss';
+</style>

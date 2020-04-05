@@ -17,6 +17,9 @@ body {
 }
 
 @media all and (min-width: 840px) {
+}
+
+@media all and (min-width: 1025px) {
   .container {
     width: 70vw;
 
@@ -42,16 +45,13 @@ body {
   }
 }
 
-@media all and (min-width: 1025px) {
-}
-
 .page--header {
   background-color: $primary-bg-color-light;
   padding-top: 5px;
   position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   .container {
     display: flex;
@@ -70,7 +70,7 @@ body {
 
 .page--content {
   padding-top: 60px;
-  min-height: calc( 100vh - 60px - 31px); /* html - .page--header - .page--footer */
+  min-height: calc(100vh - 60px - 31px); /* html - .page--header - .page--footer */
 }
 
 .page--footer {
@@ -82,7 +82,6 @@ body {
 
 .page--part {
   &.skill {
-
     h1,
     h2,
     h3,

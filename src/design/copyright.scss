@@ -10,6 +10,10 @@ p {
     color: $primary-color-inverse;
 }
 
-a, a:hover, a:focus, a:visited {
+a, a:hover, a:visited {
     color: $primary-color-lightest;
+}
+
+a:focus {
+    color: $secondary-color;
 }

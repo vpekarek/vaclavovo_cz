@@ -12,14 +12,16 @@
             list-style: none;            
         }
 
-        a {
+        a,
+        a:visited {
             padding: 15px 15px 16px;
             display: inline-block;
             text-decoration: none;
             color: $primary-color-darker;
 
             &.router-link-exact-active,
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $secondary-color;
             }
         }
