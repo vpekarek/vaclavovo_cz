@@ -1,5 +1,7 @@
+import { event } from 'vue-analytics'
 import { logger, wp } from '@/shared';
 import store from '.';
+
 
 const PAGE_IS_SCROLLED = 'pageIsScrolled';
 const PAGE_IS_NOT_SCROLLED = 'pageIsNotScrolled';
@@ -12,12 +14,14 @@ const state: PageState = {
 const mutations = {
     [PAGE_IS_SCROLLED](state: PageState) {
         state.isScrolled = true;
+        event('page', 'scroll', 'page-is-scrolled');
     },
     [PAGE_IS_NOT_SCROLLED](state: PageState) {
         state.isScrolled = false;
+        event('page', 'scroll', 'page-is-not-scrolled');
     },
     [PAGE_IS_LOADED](state: PageState, payload: { pageData: PageData[]}) {
-        state.pageData = [...payload.pageData];
+        state.pageData = [...payload.pageData];        
     }
 }
 const actions = {

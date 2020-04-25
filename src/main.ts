@@ -3,6 +3,7 @@ import VueMeta from 'vue-meta';
 import router from './router';
 import App from './App.vue';
 import store from './store';
+import VueAnalytics from 'vue-analytics'
 
 import FullLayout from './components/layouts/full-layout.vue';
 import SimpleLayout from './components/layouts/simple-layout.vue';
@@ -14,6 +15,11 @@ Vue.component('full-layout', FullLayout);
 Vue.component('simple-layout', SimpleLayout);
 Vue.component('error-layout', ErrorLayout);
 Vue.use(VueMeta, { refreshOnceOnNavigation: true });
+
+Vue.use(VueAnalytics, {
+    id: 'UA-35204916-1',
+    router
+  });
 
 var VueApp: any = Vue;
 

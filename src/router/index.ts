@@ -16,18 +16,19 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            component: () =>
-                // eslint-disable-next-line
-                import(/* webpackChunkName: "bundle.main" */ '@/views/index.vue'),
-            meta: {
-                layout: 'full-layout',
-            },
+            redirect: '/blog'
+            // component: () =>
+            //     // eslint-disable-next-line
+            //     import(/* webpackChunkName: "bundle.index" */ '@/views/index.vue'),
+            // meta: {
+            //     layout: 'full-layout',
+            // },
         },
         {
             path: '/blog',
             component: () =>
                 // eslint-disable-next-line
-                import(/* webpackChunkName: "bundle.about" */ '@/views/blog.vue'),
+                import(/* webpackChunkName: "bundle.blog" */ '@/views/blog.vue'),
             meta: {
                 layout: 'full-layout',
             },
@@ -55,12 +56,16 @@ const router = new Router({
         },
         {
             name: 'error',
-            path: '*',
+            path: '/404',
             component: PageNotFound,
             meta: {
                 layout: 'error-layout',
             },
         },
+        {
+            path: '*',
+            redirect: '/404'
+        },        
     ],
 });
 

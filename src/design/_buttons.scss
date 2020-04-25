@@ -1,0 +1,144 @@
+@import 'variables';
+
+$btn-radius: 2px;
+$background-base: #fff;
+
+.btn {
+    display: inline-block;
+    margin: 0;
+    padding: 3px 10px;
+    border: 1px solid $primary-bg-color;
+    color: $primary-color;
+    border-radius: $btn-radius;
+
+    &:hover,
+    &:focus {
+        background-color: $primary-bg-color;
+        color: $primary-color;
+    }
+
+    &.light {
+        border-color: $primary-bg-color-light;
+        color: $primary-color-lighter;
+
+        &:hover,
+        &:focus {
+            background-color: $primary-bg-color-light;
+            color: $primary-color-light;
+        }
+    }
+
+    &.dark {
+        border-color: $primary-bg-color-dark;
+        color: $primary-color-darkest;
+
+        &:hover,
+        &:focus {
+            background-color: $primary-bg-color-dark;
+            color: $primary-color-light;
+        }
+    }
+
+    
+
+    &.secondary {
+        border-color: $secondary-bg-color;
+        color: $secondary-color;
+
+        &:hover,
+        &:focus {
+            background-color: $secondary-bg-color;
+            color: $secondary-color-darker;
+        }
+
+        &.light {
+            border-color: $secondary-bg-color-light;
+            color: $secondary-color-light;
+
+            &:hover,
+            &:focus {
+                background-color: $secondary-bg-color-light;
+                color: $secondary-color-light;
+            }
+        }
+    
+        &.dark {
+            border-color: $secondary-bg-color-dark;
+            color: $secondary-color-darkest;
+
+            &:hover,
+            &:focus {
+                background-color: $secondary-bg-color-dark;
+                color: $secondary-color-light;
+            }
+        }
+    }
+
+    &.full {
+        background-color: $primary-bg-color;
+        color: $primary-color-light;
+
+        &:hover,
+        &:focus {            
+            background-color: $background-base;
+            color: $primary-color;
+            
+        }
+
+        &.light {
+            background-color: $primary-bg-color-light;
+            color: $primary-color-lighter;
+    
+            &:hover,
+            &:focus {
+                background-color: $background-base;
+            }
+        }
+    
+        &.dark {
+            background-color: $primary-bg-color-dark;
+            color: $primary-color-light;
+    
+            &:hover,
+            &:focus {
+                background-color: $background-base;
+                color: $primary-color-darkest;
+            }
+        }
+
+        &.secondary {
+            background-color: $secondary-bg-color;
+            color: $secondary-color-darker;
+    
+            &:hover,
+            &:focus {
+                background-color: $background-base;
+            }
+    
+            &.light {
+                background-color: $secondary-bg-color-light;
+                color: $secondary-color-light;
+    
+                &:hover,
+                &:focus {
+                    background-color: $background-base;
+                }
+            }
+        
+            &.dark {
+                background-color: $secondary-bg-color-dark;
+                color: $secondary-color-light;
+    
+                &:hover,
+                &:focus {
+                    background-color: $background-base;
+                }
+            }
+        }
+    }
+
+    &.block {
+        display: block;
+    }
+}
+

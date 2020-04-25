@@ -1,3 +1,4 @@
+import { event } from 'vue-analytics'
 import { WPRequest } from 'wpapi'
 import { PostModel  } from '@/model/post.model';
 import { categoryList, logger, wp } from '@/shared';
@@ -27,6 +28,7 @@ const mutations = {
         state.dataLoaded = true;
         state.total = payload.total;
         state.totalPages = payload.totalPages;
+        event('post', 'post loaded');
     },
     [POSTS_IS_NOT_LOADED](state: PostState) {
         state.posts = [];
@@ -44,6 +46,7 @@ const mutations = {
         const index = state.posts.findIndex(x => x.id === post.id);
         state.posts.splice(index, 1, post);
         state.posts = [...state.posts];
+        event('post-single', 'post loaded');
     },
     [POST_CONTENT_IS_CHANGED](state: PostState, payload: { postId: number, content: string}) {
         const index = state.posts.findIndex(x => x.id === payload.postId);
